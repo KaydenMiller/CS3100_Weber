@@ -9,5 +9,9 @@ main.o: main.c
 stack.o: stack.c
 	gcc -c stack.c
 
+debug: main.c stack.c
+	gcc main.c stack.c -g -o Assignment1_Debug
+
 clean:
-	rm *o Assignment1
+	@[ -f ./Assignment1] && rm *o Assignment1 || true
+	@[ -f ./Assignment1_Debug] && rm Assignment1_Debug || true
