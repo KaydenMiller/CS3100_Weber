@@ -1,5 +1,9 @@
 all: stack
 
+stack_asm: main.c stack.c
+	gcc -S main.c
+	gcc -S stack.c
+
 stack: main.o stack.o
 	gcc main.o stack.o -o Assignment1
 
@@ -14,4 +18,4 @@ debug: main.c stack.c
 
 clean:
 	@[ -f ./Assignment1] && rm *o Assignment1 || true
-	@[ -f ./Assignment1_Debug] && rm Assignment1_Debug || true
+	0@[ -f ./Assignment1_Debug] && rm Assignment1_Debug || true
