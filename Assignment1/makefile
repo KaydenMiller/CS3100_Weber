@@ -18,4 +18,4 @@ debug: main.c stack.c
 
 clean:
 	@[ -f ./Assignment1] && rm *o Assignment1 || true
-	0@[ -f ./Assignment1_Debug] && rm Assignment1_Debug || true
+	@[ -f ./Assignment1_Debug] && rm Assignment1_Debug || true

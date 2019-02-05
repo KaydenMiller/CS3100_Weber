@@ -1,0 +1,23 @@
+Name: Kayden Miller
+
+Purpose:
+	The purpose of system calls is to provide the services provided by the operating system to user programs.
+
+Data Structures:
+	Stacks
+	Array of function pointers
+
+Files:
+	proc.c
+	proc.h
+	syscall.c
+	syscall.h
+	usys.s
+	traps.h
+	sysproc.c
+	user.h
+
+How to make:
+	Add it to the array of function pointers
+	Give it a number so it can be called by SystemCall()
+	Make sure to update all associated files
