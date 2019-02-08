@@ -17,5 +17,5 @@ debug: main.c stack.c
 	gcc main.c stack.c -g -o Assignment1_Debug
 
 clean:
-	@[ -f ./Assignment1] && rm *o Assignment1 || true
-	@[ -f ./Assignment1_Debug] && rm Assignment1_Debug || true
+	@[ -f ./Assignment1 ] && rm *o Assignment1 || true
+	@[ -f ./Assignment1_Debug ] && rm Assignment1_Debug || true
