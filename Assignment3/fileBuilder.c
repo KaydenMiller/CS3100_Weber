@@ -5,15 +5,15 @@
 
 int main(int argc, char* argv[])
 {
-    const char* fileName = "text.txt";
+    const char* fileName = "test.txt";
     FILE* ft = fopen(fileName, "wb");
     srand(time(NULL));
     if (ft)
     {
         int i;
-        for (i = 0; i < 1000; i++)
+        for (i = 0; i < 100; i++)
         {
-            int randomNum = rand() % 1000;
+            int randomNum = rand() % 100;
             fwrite(&randomNum, sizeof(int), 1, ft);
         }
 

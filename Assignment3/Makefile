@@ -1,6 +1,6 @@
-all: fileBuilder fileReader 
+all: fileBuilder fileReader
 
-debug: fileBuilder fileReader
+debug: fileBuilder.c fileReader.c
 	gcc fileBuilder.c -g -o FileBuilderExc_Debug
 	gcc fileReader.c -g -o FileReaderExc_Debug
 
@@ -11,5 +11,9 @@ fileReader: fileReader.c
 	gcc fileReader.c -o FileReaderExc
 
 clean:
-	@[ -f ./CS3100_WEBER/Assignment3] && rm FileBuilderExc_Debug || true
-	@[ -f ./Assignment3] && rm *.o FileBuilderExc || true
+	@echo cleaning...
+	@[ -f ./FileBuilderExc ] && rm FileBuilderExc || true
+	@[ -f ./FileBuilderExc_Debug ] && rm FileBuilderExc_Debug || true
+	@[ -f ./FileReaderExc ] && rm FileReaderExc || true
+	@[ -f ./FileReaderExc_Debug ] && rm FileReaderExc_Debug || true
+	@[ -f ./*.txt ] && rm *.txt || true
