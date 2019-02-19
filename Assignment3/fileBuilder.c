@@ -11,9 +11,9 @@ int main(int argc, char* argv[])
     if (ft)
     {
         int i;
-        for (i = 0; i < 100; i++)
+        for (i = 0; i < 40; i++)
         {
-            int randomNum = rand() % 100;
+            int randomNum = (rand() % 10);
             fwrite(&randomNum, sizeof(int), 1, ft);
         }
 

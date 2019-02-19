@@ -9,8 +9,11 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/Assignment3/FileReaderExc_Debug",
-            "args": [],
+            "program": "${workspaceFolder}/Assignment3/HW3_debug.exe",
+            "args": [
+                "4",
+                "test.txt"
+            ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
@@ -29,7 +32,7 @@
             "name": "(gdb) Launch 2",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/Assignment3/FileBuilderExc_Debug",
+            "program": "${workspaceFolder}/Assignment3/minmax_debug.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -50,10 +53,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/Assignment3/HW3.exe",
-            "args": [
-                "1",
-                "test.txt"
-            ],
+            "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
