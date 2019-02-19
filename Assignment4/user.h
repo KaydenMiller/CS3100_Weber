@@ -24,6 +24,11 @@ char* sbrk(int);
 int sleep(int);
 int uptime(void);
 
+int incrementMagic(int value);
+int getMagic(void);
+int getCurrentProcessName(void);
+int modifyCurrentProcessName(char* newName);
+
 // ulib.c
 int stat(const char*, struct stat*);
 char* strcpy(char*, const char*);

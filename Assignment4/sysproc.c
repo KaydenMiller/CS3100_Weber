@@ -89,3 +89,36 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+// This will increment the value of "magic" in the cpu struct by value
+int
+sys_incrementMagic(int value)
+{
+  mycpu()->magic += value;
+  return 0;
+}
+
+// This will return the value of "magic" in the cpu struct
+int
+sys_getMagic(void)
+{
+  int magicOutput = mycpu()->magic;
+  return magicOutput;
+}
+
+// This will print the value of the current processes name
+int
+sys_getCurrentProcessName(void)
+{
+  char* name = myproc()->name;
+  cprintf("%s\n", name);
+  return 0;
+}
+
+// This will set the current processes name
+int
+sys_modifyCurrentProcessName(char* newName)
+{
+  //myproc()->name = newName;
+  return 0;
+}
