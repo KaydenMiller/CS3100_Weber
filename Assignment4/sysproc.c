@@ -90,11 +90,16 @@ sys_uptime(void)
   return xticks;
 }
 
+int magic = 0;
 // This will increment the value of "magic" in the cpu struct by value
 int
-sys_incrementMagic(int value)
+sys_incrementMagic(void)
 {
-  mycpu()->magic += value;
+  //8.5 x 11 sheet is allowed on test double sided
+  int value;
+  argint(0, &value);
+  magic += value;
+  // cli?
   return 0;
 }
 
@@ -102,7 +107,8 @@ sys_incrementMagic(int value)
 int
 sys_getMagic(void)
 {
-  int magicOutput = mycpu()->magic;
+  // the following line has an error in it mycpu()->magic
+  int magicOutput = magic;
   return magicOutput;
 }
 
@@ -111,14 +117,25 @@ int
 sys_getCurrentProcessName(void)
 {
   char* name = myproc()->name;
-  cprintf("%s\n", name);
+  cprintf("%s", name);
   return 0;
 }
 
 // This will set the current processes name
 int
-sys_modifyCurrentProcessName(char* newName)
+sys_modifyCurrentProcessName(void)
 {
-  //myproc()->name = newName;
+  char* newName;
+  argstr(0, &newName);
+
+  int lengthOfString = strlen(newName);
+  if (lengthOfString >= 16)
+    return -1;
+
+  for (int i = 0; i < lengthOfString; i++)
+  {
+    myproc()->name[i] = newName[i];
+  }
+  
   return 0;
 }
